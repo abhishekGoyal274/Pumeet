@@ -1,78 +1,29 @@
-# pumeet
+## PU Meet Frontend
 
-Web app to facilitate pumeet examination
+This is a [Next.js] project bootstrapped with [`create-next-app`]
 
-[![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
-[![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+## Getting Started
 
-## Settings
+First clone this project on you local machine
 
-Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
-
-## Environment Variables
+Then install the project dependencies:
 
 ```
-CELERY_BROKER_URL="redis://localhost:6379/0"
-REDIS_URL="redis://localhost:6379/0"
-DATABASE_URL="postgres://postgres:postgres@localhost:5432/puleet"
-DJANGO_ALLOWED_HOSTS="*"
-DJANGO_CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001,http://0.0.0.0:3000
+npm install or yarn
 ```
 
-## Basic Commands
+Then run the development server:
 
-### Setting Up Your Users
-
--   To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
-
--   To create a **superuser account**, use this command:
-
-        $ python manage.py createsuperuser
-
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
-
-### Type checks
-
-Running type checks with mypy:
-
-    $ mypy pumeet
-
-### Test coverage
-
-To run the tests, check your test coverage, and generate an HTML coverage report:
-
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
-
-#### Running tests with pytest
-
-    $ pytest
-
-### Live reloading and Sass CSS compilation
-
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#sass-compilation-live-reloading).
-
-### Celery
-
-This app comes with Celery.
-
-To run a celery worker:
-
-``` bash
-cd pumeet
-celery -A config.celery_app worker -l info
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-Please note: For Celery's import magic to work, it is important *where* the celery commands are run. If you are in the same folder with *manage.py*, you should be right.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Sentry
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/*](http://localhost:3000/api/*). This endpoint can be edited in `pages/api/*.ts`.
 
-Sentry is an error logging aggregator service. You can sign up for a free account at <https://sentry.io/signup/?code=cookiecutter> or download and host it yourself.
-The system is set up with reasonable defaults, including 404 logging and integration with the WSGI application.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-You must set the DSN url in production.
 
-## Deployment
-
-The following details how to deploy this application.
