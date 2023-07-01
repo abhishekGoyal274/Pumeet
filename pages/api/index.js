@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 //Configurations
 dotenv.config();
-sgMail.setApiKey('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');
+sgMail.setApiKey('');
 const sgMailFunction = (host, emailToken, email, res, registered) => {
   const msg = {
     to: email, // Change to your recipient
